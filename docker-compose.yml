@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: washbin-db
+    environment:
+      POSTGRES_USER: washbin
+      POSTGRES_PASSWORD: washbin
+      POSTGRES_DB: washbin
+    ports:
+      - "5432:5432"
+    volumes:
+      - washbin-db:/var/lib/postgresql/data
+volumes:
+  washbin-db:
